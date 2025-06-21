@@ -1,0 +1,20 @@
+Query,Label
+"SELECT user_id, username FROM users WHERE registration_date > '2024-01-01';",0
+"SELECT o.order_id, p.product_name FROM orders o JOIN products p ON o.product_id = p.id WHERE o.user_id = 543;",0
+"SELECT category, COUNT(*) as item_count FROM products GROUP BY category ORDER BY item_count DESC;",0
+"INSERT INTO logs (timestamp, level, message) VALUES (NOW(), 'info', 'User login successful');",0
+"UPDATE settings SET value = 'dark' WHERE setting_key = 'theme' AND user_id = 101;",0
+"DELETE FROM sessions WHERE last_activity < NOW() - INTERVAL '1 hour';",0
+"SELECT * FROM users WHERE username = 'admin' AND password = 'password' OR '1'='1';",1
+"SELECT * FROM products WHERE id = 10 OR 1=1 --';",1
+"SELECT name, description FROM products WHERE category = 'Electronics' UNION SELECT username, password FROM users;",1
+"SELECT product_id, price FROM items WHERE id = 5 UNION SELECT NULL, version(); --",1
+"SELECT * FROM items WHERE id = 1 AND (SELECT COUNT(*) FROM users) > 10;",1
+"SELECT * FROM products WHERE id = 1; SELECT pg_sleep(5); --",1
+"SELECT username FROM users WHERE id = 123 OR 1=1 # AND status = 'active'",1
+"SELECT * FROM users WHERE id = 1 /*!UNION*/ /*!SELECT*/ password FROM members --",1
+"SELECT * FROM sessions WHERE user_id = 1; DROP TABLE logs; --",1
+"sElEcT userID fRoM accounts WHERE userID = 1 oR '1'='1'",1
+"SELECT name FROM products WHERE id = -1 UNION SELECT table_name FROM information_schema.tables;",1
+"SELECT id FROM posts WHERE content = 'This is a post about ""SQL"" basics.';",0
+"SELECT * FROM customers WHERE country IN ('USA', 'Canada', 'Mexico');",0

@@ -1,0 +1,12 @@
+--extra-index-url https://download.pytorch.org/whl/cu126
+torch
+torchvision
+torchaudio
+transformers
+scikit-learn==1.5.2
+pandas
+numpy
+tensorflow
+joblib
+scikeras
+tqdm
